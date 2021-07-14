@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Form from "./Form";
+import Footer from "./Footer";
+import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
+import "./App.css";
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url("/images/clear-sky.jpg")`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="container">
+        <div className="open-source">
+          <div className="card">
+            <div className="card-body">
+              <h1>Current Weather</h1>
+              <Form />
+            </div>
+            <Forecast />
+          </div>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;

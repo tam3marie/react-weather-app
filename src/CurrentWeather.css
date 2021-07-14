@@ -1,0 +1,90 @@
+small {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info {
+  color: rgb(61, 60, 60);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.currentTemp {
+  color: #663399;
+  font-size: 70px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  padding: 0;
+  vertical-align: text-top;
+}
+.f-c {
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  vertical-align: text-top;
+}
+.active {
+  color: rgb(61, 60, 60);
+  text-decoration: none;
+  text-shadow: 0.3px 0.3px 0.3px white;
+}
+.active:hover {
+  color: rgb(61, 60, 60);
+  cursor: default;
+  text-decoration: none;
+}
+.not-active {
+  color: rgb(105, 104, 104);
+  text-shadow: 0.3px 0.3px 0.3px white;
+}
+.not-active:hover {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.details {
+  color: rgb(61, 60, 60);
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+#high-temp,
+.forecast-temp-high {
+  color: #663399;
+  font-weight: bold;
+}
+#low-temp,
+.forecast-temp-low {
+  color: teal;
+  font-weight: bold;
+}
+#current-time {
+  color: teal;
+}
+#weather-description {
+  text-transform: capitalize;
+}
+
+#fahrenheit,
+#celsius {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .col-md-8 {
+    margin-bottom: 20px;
+  }
+  .info {
+    font-size: 20px;
+  }
+
+  .details {
+    font-size: 12px;
+  }
+}
