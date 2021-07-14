@@ -1,7 +1,8 @@
 import Form from "./Form";
 import Footer from "./Footer";
-import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 export default function App() {
   return (
