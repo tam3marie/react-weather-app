@@ -13,7 +13,9 @@ export default function Form() {
   const [description, setDescription] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [wind, setWind] = useState(null);
-  const [icon, setIcon] = useState(null);
+  const [icon, setIcon] = useState(
+    `https://openweathermap.org/img/wn/01d@2x.png`
+  );
 
   let weatherApiKey = "f909d15f15ba4c8f6204927cf3507a71";
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${weatherApiKey}`;
