@@ -7,6 +7,7 @@ import "./Form.css";
 
 export default function Form() {
   const [city, setCity] = useState(null);
+  const [citySearched, setCitySearched] = useState(null);
   const [temperature, setTemperature] = useState(null);
   const [highTemp, setHighTemp] = useState(null);
   const [lowTemp, setLowTemp] = useState(null);
@@ -21,6 +22,8 @@ export default function Form() {
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${weatherApiKey}`;
 
   function getWeatherDetails(response) {
+    console.log(response);
+    setCitySearched(response.data.name);
     setTemperature(Math.round(response.data.main.temp));
     setHighTemp(Math.round(response.data.main.temp_max));
     setLowTemp(Math.round(response.data.main.temp_min));
@@ -78,7 +81,7 @@ export default function Form() {
         </div>
       </form>
       <CurrentWeather
-        city={city}
+        citySearched={citySearched}
         temperature={temperature}
         highTemp={highTemp}
         lowTemp={lowTemp}

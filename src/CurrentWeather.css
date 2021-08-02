@@ -53,6 +53,10 @@ small {
   margin-top: 15px;
 }
 
+#display-city {
+  font-size: 40px;
+}
+
 #high-temp,
 .forecast-temp-high {
   color: #663399;
