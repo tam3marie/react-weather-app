@@ -6,38 +6,29 @@ import CurrentWeather from "./CurrentWeather";
 import "./Form.css";
 
 export default function Form() {
-  const [city, setCity] = useState(null);
   const [citySearched, setCitySearched] = useState(null);
-  const [temperature, setTemperature] = useState(null);
-  const [highTemp, setHighTemp] = useState(null);
-  const [lowTemp, setLowTemp] = useState(null);
-  const [description, setDescription] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [wind, setWind] = useState(null);
-  const [icon, setIcon] = useState(
-    `https://openweathermap.org/img/wn/01d@2x.png`
-  );
+  const [weatherData, setWeatherData] = useState({});
 
   let weatherApiKey = "f909d15f15ba4c8f6204927cf3507a71";
-  let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${weatherApiKey}`;
+  let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearched}&units=imperial&appid=${weatherApiKey}`;
 
   function getWeatherDetails(response) {
     console.log(response);
-    setCitySearched(response.data.name);
-    setTemperature(Math.round(response.data.main.temp));
-    setHighTemp(Math.round(response.data.main.temp_max));
-    setLowTemp(Math.round(response.data.main.temp_min));
-    setDescription(response.data.weather[0].description);
-    setHumidity(Math.round(response.data.main.humidity));
-    setWind(Math.round(response.data.wind.speed));
-    setIcon(
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
+    setWeatherData({
+      city: response.data.name,
+      temperature: Math.round(response.data.main.temp),
+      highTemp: Math.round(response.data.main.temp_max),
+      lowTemp: Math.round(response.data.main.temp_min),
+      description: response.data.weather[0].description,
+      humidity: Math.round(response.data.main.humidity),
+      wind: Math.round(response.data.wind.speed),
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
   }
 
   function searchCity(event) {
     event.preventDefault();
-    if (city === null) {
+    if (citySearched === null) {
       alert("Please type a city.");
     } else {
       axios.get(weatherApiUrl).then(getWeatherDetails);
@@ -45,7 +36,7 @@ export default function Form() {
   }
 
   function updateCity(event) {
-    setCity(event.target.value);
+    setCitySearched(event.target.value);
   }
   return (
     <div className="Form">
@@ -81,14 +72,14 @@ export default function Form() {
         </div>
       </form>
       <CurrentWeather
-        citySearched={citySearched}
-        temperature={temperature}
-        highTemp={highTemp}
-        lowTemp={lowTemp}
-        description={description}
-        humidity={humidity}
-        wind={wind}
-        icon={icon}
+        city={weatherData.city}
+        temperature={weatherData.temperature}
+        highTemp={weatherData.highTemp}
+        lowTemp={weatherData.lowTemp}
+        description={weatherData.description}
+        humidity={weatherData.humidity}
+        wind={weatherData.wind}
+        icon={weatherData.icon}
       />
     </div>
   );

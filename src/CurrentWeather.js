@@ -9,7 +9,7 @@ export default function CurrentWeather(props) {
       <div className="row">
         <div className="col-8">
           <p className="info">
-            <span id="display-city">{props.citySearched}</span> <br />
+            <span id="display-city">{props.city}</span> <br />
             <span id="current-date">Wednesday, July 14, 2021</span>
             <small id="current-time"> 12:00PM</small>
             <br />
