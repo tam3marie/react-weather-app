@@ -18,7 +18,7 @@ export default function Form() {
     setOnLoad(true);
     setWeatherData({
       city: response.data.name,
-      timestamp: response.data.dt * 1000,
+      timestamp: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       highTemp: Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
@@ -75,17 +75,7 @@ export default function Form() {
             </div>
           </div>
         </form>
-        <CurrentWeather
-          city={weatherData.city}
-          timestamp={new Date(weatherData.timestamp)}
-          temperature={weatherData.temperature}
-          highTemp={weatherData.highTemp}
-          lowTemp={weatherData.lowTemp}
-          description={weatherData.description}
-          humidity={weatherData.humidity}
-          wind={weatherData.wind}
-          icon={weatherData.icon}
-        />
+        <CurrentWeather data={weatherData} />
       </div>
     );
   } else {

@@ -10,23 +10,23 @@ export default function CurrentWeather(props) {
       <div className="row">
         <div className="col-8">
           <p className="info">
-            <span id="display-city">{props.city}</span> <br />
-            <FormattedDate timestamp={props.timestamp} />
-            <span id="weather-description">{props.description} </span>
+            <span id="display-city">{props.data.city}</span> <br />
+            <FormattedDate timestamp={props.data.timestamp} />
+            <span id="weather-description">{props.data.description} </span>
             <small className="high-low-temps">
-              <span id="high-temp">{props.highTemp}</span>/
-              <span id="low-temp">{props.lowTemp}</span>
+              <span id="high-temp">{props.data.highTemp}</span>/
+              <span id="low-temp">{props.data.lowTemp}</span>
             </small>
           </p>
 
           <p className="currentTemp">
             <img
-              src={props.icon}
+              src={props.data.icon}
               alt="weather icon"
               className="float-left"
               id="icon"
             />
-            <span id="current-degrees">{props.temperature}</span>°
+            <span id="current-degrees">{props.data.temperature}</span>°
             <span className="f-c">
               <span className="fahrenheit">
                 <a href="/" className="active" id="fahrenheit-link">
@@ -44,9 +44,9 @@ export default function CurrentWeather(props) {
         </div>
         <div className="col-4">
           <p className="details">
-            Humidity: <span id="humidity">{props.humidity}</span>%
+            Humidity: <span id="humidity">{props.data.humidity}</span>%
             <br />
-            Wind Speed: <span id="wind">{props.wind}</span>
+            Wind Speed: <span id="wind">{props.data.wind}</span>
             <span id="wind-units"> mph</span>
           </p>
         </div>
