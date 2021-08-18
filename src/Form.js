@@ -7,7 +7,7 @@ import "./Form.css";
 
 export default function Form() {
   const [onLoad, setOnLoad] = useState(false);
-  const [citySearched, setCitySearched] = useState(null);
+  const [citySearched, setCitySearched] = useState("New York");
   const [weatherData, setWeatherData] = useState({});
 
   let weatherApiKey = "f909d15f15ba4c8f6204927cf3507a71";
@@ -18,7 +18,7 @@ export default function Form() {
     setOnLoad(true);
     setWeatherData({
       city: response.data.name,
-      timestamp: new Date(response.data.dt * 1000),
+      timestamp: response.data.dt * 1000,
       temperature: Math.round(response.data.main.temp),
       highTemp: Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
@@ -30,12 +30,16 @@ export default function Form() {
   }
 
   function searchCity(event) {
-    event.preventDefault();
     if (citySearched === null) {
       alert("Please type a city.");
     } else {
       axios.get(weatherApiUrl).then(getWeatherDetails);
     }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
   }
 
   function updateCity(event) {
@@ -44,7 +48,7 @@ export default function Form() {
   if (onLoad) {
     return (
       <div className="Form">
-        <form id="search-city" onSubmit={searchCity}>
+        <form id="search-city" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-8">
               <input
@@ -79,10 +83,7 @@ export default function Form() {
       </div>
     );
   } else {
-    let weatherApiKey = "f909d15f15ba4c8f6204927cf3507a71";
-    let onLoadApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&units=imperial&appid=${weatherApiKey}`;
-
-    axios.get(onLoadApiUrl).then(getWeatherDetails);
+    searchCity();
     return "Loading...";
   }
 }

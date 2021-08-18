@@ -11,7 +11,7 @@ export default function CurrentWeather(props) {
         <div className="col-8">
           <p className="info">
             <span id="display-city">{props.data.city}</span> <br />
-            <FormattedDate timestamp={props.data.timestamp} />
+            <FormattedDate timestamp={new Date(props.data.timestamp)} />
             <span id="weather-description">{props.data.description} </span>
             <small className="high-low-temps">
               <span id="high-temp">{props.data.highTemp}</span>/
