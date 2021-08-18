@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import FormattedDate from "./FormattedDate";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
@@ -10,9 +11,7 @@ export default function CurrentWeather(props) {
         <div className="col-8">
           <p className="info">
             <span id="display-city">{props.city}</span> <br />
-            <span id="current-date">Wednesday, July 14, 2021</span>
-            <small id="current-time"> 12:00PM</small>
-            <br />
+            <FormattedDate timestamp={props.timestamp} />
             <span id="weather-description">{props.description} </span>
             <small className="high-low-temps">
               <span id="high-temp">{props.highTemp}</span>/

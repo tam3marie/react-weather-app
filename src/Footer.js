@@ -10,19 +10,28 @@ export default function Footer() {
         <a
           href="https://github.com/tam3marie/react-weather-app"
           target="_blank"
+          rel="noreferrer"
         >
           Open-Source Code
         </a>{" "}
         by{" "}
-        <a href="https://www.starieknightdesigns.com/" target="_blank">
+        <a
+          href="https://www.starieknightdesigns.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Tammy Knight
         </a>
         <br />
-        <a href="react-weather-app-tknight.netlify.app" target="_blank">
+        <a
+          href="react-weather-app-tknight.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
           Hosted
         </a>{" "}
         on{" "}
-        <a href="https://www.netlify.com/" target="_blank">
+        <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
           Netlify
         </a>
       </div>
