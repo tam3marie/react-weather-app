@@ -16,7 +16,7 @@ small {
   color: #663399;
   font-size: 70px;
   font-weight: 700;
-  margin: 0 0 30px 0;
+  margin: 0 0 30px 5px;
   padding: 0;
   vertical-align: text-top;
 }
@@ -72,6 +72,9 @@ small {
 }
 #weather-description {
   text-transform: capitalize;
+}
+#current-degrees {
+  margin-left: 10px;
 }
 
 #fahrenheit,

@@ -2,6 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
@@ -11,7 +13,7 @@ export default function CurrentWeather(props) {
         <div className="col-8">
           <p className="info">
             <span id="display-city">{props.data.city}</span> <br />
-            <FormattedDate timestamp={new Date(props.data.timestamp)} />
+            <FormattedDate timestamp={props.data.timestamp} />
             <span id="weather-description">{props.data.description} </span>
             <small className="high-low-temps">
               <span id="high-temp">{props.data.highTemp}</span>/
@@ -20,12 +22,7 @@ export default function CurrentWeather(props) {
           </p>
 
           <p className="currentTemp">
-            <img
-              src={props.data.icon}
-              alt="weather icon"
-              className="float-left"
-              id="icon"
-            />
+            <WeatherIcon code={props.data.icon} />
             <span id="current-degrees">{props.data.temperature}</span>°
             <span className="f-c">
               <span className="fahrenheit">

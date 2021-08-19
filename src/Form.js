@@ -15,18 +15,18 @@ export default function Form() {
 
   function getWeatherDetails(response) {
     console.log(response);
-    setOnLoad(true);
     setWeatherData({
       city: response.data.name,
-      timestamp: response.data.dt * 1000,
+      timestamp: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       highTemp: Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
       description: response.data.weather[0].description,
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
+    setOnLoad(true);
   }
 
   function searchCity(event) {
