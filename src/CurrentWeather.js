@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import CurrentTemperature from "./CurrentTemperature";
+import Forecast from "./Forecast";
 
 import "./CurrentWeather.css";
 
@@ -36,6 +37,7 @@ export default function CurrentWeather(props) {
           </p>
         </div>
       </div>
+      <Forecast coordinates={props.data.coordinates} />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import Form from "./Form";
 import Footer from "./Footer";
-import Forecast from "./Forecast";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -21,7 +20,6 @@ export default function App() {
               <h1>Current Weather</h1>
               <Form />
             </div>
-            <Forecast />
           </div>
           <Footer />
         </div>

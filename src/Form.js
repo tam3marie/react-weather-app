@@ -17,6 +17,7 @@ export default function Form() {
     console.log(response);
     setWeatherData({
       city: response.data.name,
+      coordinates: response.data.coord,
       timestamp: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       highTemp: Math.round(response.data.main.temp_max),
