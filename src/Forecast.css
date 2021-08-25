@@ -17,7 +17,6 @@ h2 {
   text-decoration: none;
 }
 .five-day-forcast {
-  margin-bottom: 15px;
   text-align: center;
 }
 .active-daily-hourly:hover {
@@ -30,11 +29,29 @@ h2 {
   cursor: pointer;
   text-decoration: underline;
 }
-.forecast-weekday {
+.Forecast {
+  margin: 15px;
+}
+.Forecast .col {
+  text-align: center;
+}
+.Forecast-day {
   color: rgb(61, 60, 60);
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 3px;
+  margin-bottom: 8px;
+}
+
+.Forecast-temp-max {
+  color: #663399;
+  font-weight: bold;
+}
+.Forecast-temp-min {
+  color: #663399;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-left: 5px;
 }
 
 @media (max-width: 600px) {

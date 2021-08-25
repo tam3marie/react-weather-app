@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import WeatherIcon from "./WeatherIcon";
 import "./Forecast.css";
 
 export default function Forecast() {
@@ -16,6 +17,16 @@ export default function Forecast() {
       </h2>
       <br />
       <div className="five-day-forcast" id="forecast"></div>
+      <div className="row">
+        <div className="col">
+          <div className="Forecast-day">Thu</div>
+          <WeatherIcon code="01d" size={32} />
+          <div className="Forecast-teamperatures">
+            <span className="Forecast-temp-max">90°</span>
+            <span className="Forecast-temp-min">80°</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

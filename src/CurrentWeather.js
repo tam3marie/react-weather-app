@@ -23,7 +23,7 @@ export default function CurrentWeather(props) {
           </p>
 
           <p className="currentTemp">
-            <WeatherIcon code={props.data.icon} />
+            <WeatherIcon code={props.data.icon} size={52} />
             <CurrentTemperature fahrenheit={props.data.temperature} />
           </p>
         </div>
