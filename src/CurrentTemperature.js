@@ -18,10 +18,8 @@ export default function CurrentTemperature(props) {
       <span className="CurrentTemperature">
         <span id="current-degrees">{props.fahrenheit}</span>°
         <span className="f-c">
-          <span className="fahrenheit">
-            <a href="/" className="active" id="fahrenheit-link">
-              F
-            </a>
+          <span className="fahrenheit active" id="fahrenheit-link">
+            F
           </span>
           |
           <span className="celsius">
@@ -42,10 +40,8 @@ export default function CurrentTemperature(props) {
       <span className="CurrentTemperature">
         <span id="current-degrees">{celsiusConversion()}</span>°
         <span className="f-c">
-          <span className="celsius">
-            <a href="/" className="active" id="celsius-link">
-              C
-            </a>
+          <span className="celsius active" id="celsius-link">
+            C
           </span>
           |
           <span className="fahrenheit">
