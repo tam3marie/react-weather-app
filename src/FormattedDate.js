@@ -44,7 +44,7 @@ export default function FormattedDate(props) {
       </span>
       <small id="current-time">
         {" "}
-        {hours}: {minutes}
+        {hours}:{minutes}
       </small>
     </div>
   );
