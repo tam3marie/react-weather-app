@@ -3,7 +3,7 @@ import WeatherIcon from "./WeatherIcon";
 import { UnitContext } from "./UseContexts";
 
 export default function ForecastDay(props) {
-  const { unit, setUnit } = useContext(UnitContext);
+  const { unit } = useContext(UnitContext);
 
   function maxTemperatureFahrenheit() {
     let maxTempF = Math.round(props.data.temp.max);
