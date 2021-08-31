@@ -46,6 +46,21 @@ export default function Form() {
   function updateCity(event) {
     setCitySearched(event.target.value);
   }
+
+  function currentCityWeather(position) {
+    console.log(position);
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let currentCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${weatherApiKey}`;
+    setOnLoad(true);
+    setCitySearched("");
+    axios.get(currentCityApiUrl).then(getWeatherDetails);
+  }
+
+  function currentCityLocation(event) {
+    navigator.geolocation.getCurrentPosition(currentCityWeather);
+  }
+
   if (onLoad) {
     return (
       <div className="Form">
@@ -76,6 +91,7 @@ export default function Form() {
                 className="btn btn-current"
                 id="current-button"
                 value="Current"
+                onClick={currentCityLocation}
               />
             </div>
           </div>
