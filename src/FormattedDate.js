@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UnitContext } from "./UseContexts";
+
+import FormattedMilitaryTime from "./FormattedMilitaryTime";
+import FormattedStandardTime from "./FormattedStandardTime";
 
 export default function FormattedDate(props) {
+  const { unit } = useContext(UnitContext);
   console.log(props.timestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -29,23 +35,31 @@ export default function FormattedDate(props) {
   let month = months[props.timestamp.getMonth()];
   let date = props.timestamp.getDate();
   let year = props.timestamp.getFullYear();
-  let hours = props.timestamp.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
+  // let hours = props.timestamp.getHours();
+  // if (hours < 10) {
+  //   hours = `0${hours}`;
+  // }
+  // let minutes = props.timestamp.getMinutes();
+  // if (minutes < 10) {
+  //   minutes = `0${minutes}`;
+  // }
+  if (unit === "fahrenheit") {
+    return (
+      <div className="FormattedDate">
+        <span id="current-date">
+          {day}, {month} {date}, {year}
+        </span>
+        <FormattedStandardTime timestamp={props.timestamp} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="FormattedDate">
+        <span id="current-date">
+          {day}, {month} {date}, {year}
+        </span>
+        <FormattedMilitaryTime timestamp={props.timestamp} />
+      </div>
+    );
   }
-  let minutes = props.timestamp.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return (
-    <div className="FormattedDate">
-      <span id="current-date">
-        {day}, {month} {date}, {year}
-      </span>
-      <small id="current-time">
-        {" "}
-        {hours}:{minutes}
-      </small>
-    </div>
-  );
 }
