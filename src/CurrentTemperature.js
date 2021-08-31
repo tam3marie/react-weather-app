@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { UnitContext } from "./UseContexts";
 
 export default function CurrentTemperature(props) {
-  const [unit, setUnit] = useState("fahrenheit");
+  const { unit, setUnit } = useContext(UnitContext);
   function showCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
