@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import CurrentHighLowTemps from "./CurrentHighLowTemps";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import CurrentTemperature from "./CurrentTemperature";
@@ -18,8 +19,10 @@ export default function CurrentWeather(props) {
             <FormattedDate timestamp={props.data.timestamp} />
             <span id="weather-description">{props.data.description} </span>
             <small className="high-low-temps">
-              <span id="high-temp">{props.data.highTemp}</span>/
-              <span id="low-temp">{props.data.lowTemp}</span>
+              <CurrentHighLowTemps
+                highTemp={props.data.highTemp}
+                lowTemp={props.data.lowTemp}
+              />
             </small>
           </p>
 
