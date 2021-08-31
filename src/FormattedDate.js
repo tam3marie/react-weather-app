@@ -6,7 +6,6 @@ import FormattedStandardTime from "./FormattedStandardTime";
 
 export default function FormattedDate(props) {
   const { unit } = useContext(UnitContext);
-  console.log(props.timestamp);
 
   let days = [
     "Sunday",
@@ -35,14 +34,6 @@ export default function FormattedDate(props) {
   let month = months[props.timestamp.getMonth()];
   let date = props.timestamp.getDate();
   let year = props.timestamp.getFullYear();
-  // let hours = props.timestamp.getHours();
-  // if (hours < 10) {
-  //   hours = `0${hours}`;
-  // }
-  // let minutes = props.timestamp.getMinutes();
-  // if (minutes < 10) {
-  //   minutes = `0${minutes}`;
-  // }
   if (unit === "fahrenheit") {
     return (
       <div className="FormattedDate">

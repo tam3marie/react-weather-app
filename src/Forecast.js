@@ -2,49 +2,33 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-import ForecastDay from "./ForecastDay";
+//import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
+import ForecastToggle from "./ForecastToggle";
 
 export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
-  const [forecastData, setForecastData] = useState(null);
+  const [dailyForecastData, setDailyForecastData] = useState(null);
+  const [hourlyForecastData, setHourlyForecastData] = useState(null);
 
   useEffect(() => {
     setLoaded(false);
   }, [props.coordinates]);
 
   function getForecast(response) {
-    setForecastData(response.data.daily);
+    setDailyForecastData(response.data.daily);
+    setHourlyForecastData(response.data.hourly);
     setLoaded(true);
-    console.log(response.data.daily);
+    console.log(response.data.hourly);
   }
 
   if (loaded) {
     return (
       <div className="Forecast">
-        <h2>
-          <a href="/" className="active-daily-hourly" id="five-day-forecast">
-            5 Day Forecast
-          </a>
-          <a href="/" className="not-active-daily-hourly" id="hourly-forecast">
-            Switch to Hourly
-          </a>
-        </h2>
-        <br />
-        <div className="five-day-forcast" id="forecast"></div>
-        <div className="row">
-          {forecastData.map(function (dailyForecast, index) {
-            if (index > 0 && index < 6) {
-              return (
-                <div className="col" key={index}>
-                  <ForecastDay data={dailyForecast} />
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </div>
+        <ForecastToggle
+          dailyForecastData={dailyForecastData}
+          hourlyForecastData={hourlyForecastData}
+        />
       </div>
     );
   } else {
