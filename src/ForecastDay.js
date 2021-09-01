@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import WeatherIcon from "./WeatherIcon";
 import { UnitContext } from "./UseContexts";
 
+import "./ForecastDay.css";
+
 export default function ForecastDay(props) {
   const { unit } = useContext(UnitContext);
 
@@ -35,13 +37,13 @@ export default function ForecastDay(props) {
   if (unit === "fahrenheit") {
     return (
       <div className="ForecastDay">
-        <div className="Forecast-day">{weekDay()}</div>
+        <div className="forecast-day">{weekDay()}</div>
         <WeatherIcon code={props.data.weather[0].icon} size={32} />
-        <div className="Forecast-teamperatures">
-          <span className="Forecast-temp-max">
+        <div>
+          <span className="forecast-temp-max">
             {maxTemperatureFahrenheit()}
           </span>
-          <span className="Forecast-temp-min">
+          <span className="forecast-temp-min">
             {minTemperatureFahrenheit()}
           </span>
         </div>
@@ -50,11 +52,11 @@ export default function ForecastDay(props) {
   } else {
     return (
       <div className="ForecastDay">
-        <div className="Forecast-day">{weekDay()}</div>
+        <div className="forecast-day">{weekDay()}</div>
         <WeatherIcon code={props.data.weather[0].icon} size={32} />
-        <div className="Forecast-teamperatures">
-          <span className="Forecast-temp-max">{maxTemperatureCelsius()}</span>
-          <span className="Forecast-temp-min">{minTemperatureCelsius()}</span>
+        <div>
+          <span className="forecast-temp-max">{maxTemperatureCelsius()}</span>
+          <span className="forecast-temp-min">{minTemperatureCelsius()}</span>
         </div>
       </div>
     );

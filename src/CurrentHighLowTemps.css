@@ -1,0 +1,8 @@
+.CurrentHighLowTemps .high-temp {
+  color: #663399;
+  font-weight: bold;
+}
+.CurrentHighLowTemps .low-temp {
+  color: teal;
+  font-weight: bold;
+}

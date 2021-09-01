@@ -1,31 +1,32 @@
-.form-control {
+.Form .form-control {
   margin-bottom: 0;
 }
-.btn-search {
+.Form .btn-search {
   background: teal;
   border: teal;
   color: white;
   width: 100%;
 }
-.btn-search:hover {
+.Form .btn-search:hover {
   background: #62baac;
   border: #62baac;
   color: white;
 }
-.btn-current {
+.Form .btn-current {
   background: #663399;
   border: #663399;
   color: white;
   width: 100%;
 }
-.btn-current:hover {
+.Form .btn-current:hover {
   background: #cf92ff;
   border: #cf92ff;
   color: white;
 }
 
 @media (max-width: 600px) {
-  .btn {
-    margin-bottom: 6px;
+  .Form .btn-search,
+  .Form .btn-current {
+    margin-top: 6px;
   }
 }

@@ -1,4 +1,4 @@
-#open-source {
+.Footer .open-source {
   background-color: #d3dbdc;
   border-radius: 4px;
   margin: 10px auto;
@@ -6,15 +6,15 @@
   text-align: center;
 }
 
-#open-source a {
+.Footer .open-source a {
   color: teal;
 }
 
-#open-source a:hover {
+.Footer .open-source a:hover {
   color: #663399;
 }
 @media (max-width: 600px) {
-  #open-source {
+  .Footer .open-source {
     max-width: 100%;
   }
 }

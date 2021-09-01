@@ -14,7 +14,6 @@ export default function Form() {
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearched}&units=imperial&appid=${weatherApiKey}`;
 
   function getWeatherDetails(response) {
-    console.log(response);
     setWeatherData({
       city: response.data.name,
       coordinates: response.data.coord,
@@ -31,11 +30,7 @@ export default function Form() {
   }
 
   function searchCity(event) {
-    if (citySearched === null) {
-      alert("Please type a city.");
-    } else {
-      axios.get(weatherApiUrl).then(getWeatherDetails);
-    }
+    axios.get(weatherApiUrl).then(getWeatherDetails);
   }
 
   function handleSubmit(event) {
@@ -48,12 +43,10 @@ export default function Form() {
   }
 
   function currentCityWeather(position) {
-    console.log(position);
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     let currentCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${weatherApiKey}`;
     setOnLoad(true);
-    setCitySearched("");
     axios.get(currentCityApiUrl).then(getWeatherDetails);
   }
 
@@ -64,7 +57,7 @@ export default function Form() {
   if (onLoad) {
     return (
       <div className="Form">
-        <form id="search-city" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-8">
               <input
@@ -73,23 +66,16 @@ export default function Form() {
                 placeholder="🔍 Search City"
                 autoComplete="off"
                 autoFocus="on"
-                id="search-city-input"
                 onChange={updateCity}
               />
             </div>
             <div className="col-md-2">
-              <input
-                type="submit"
-                className="btn btn-search"
-                id="search-button"
-                value="Search"
-              />
+              <input type="submit" className="btn btn-search" value="Search" />
             </div>
             <div className="col-md-2">
               <input
                 type="button"
                 className="btn btn-current"
-                id="current-button"
                 value="Current"
                 onClick={currentCityLocation}
               />

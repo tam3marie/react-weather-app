@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./FormattedMilitaryTime.css";
+
 export default function FormattedMilitaryTime(props) {
   let hours = props.timestamp.getHours();
   if (hours < 10) {
@@ -10,7 +12,7 @@ export default function FormattedMilitaryTime(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <small id="current-time">
+    <small className="current-time">
       {" "}
       {hours}:{minutes}
     </small>

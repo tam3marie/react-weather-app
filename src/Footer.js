@@ -6,7 +6,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="Footer">
-      <div id="open-source">
+      <div className="open-source">
         <a
           href="https://github.com/tam3marie/react-weather-app"
           target="_blank"

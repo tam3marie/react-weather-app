@@ -1,0 +1,40 @@
+.CurrentTemperature .f-c {
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  vertical-align: text-top;
+}
+.CurrentTemperature .active {
+  color: rgb(61, 60, 60);
+  text-decoration: none;
+  text-shadow: 0.3px 0.3px 0.3px white;
+}
+.CurrentTemperature .active:hover {
+  color: rgb(61, 60, 60);
+  cursor: default;
+  text-decoration: none;
+}
+.CurrentTemperature .not-active {
+  color: rgb(105, 104, 104);
+  text-shadow: 0.3px 0.3px 0.3px white;
+}
+.CurrentTemperature .not-active:hover {
+  color: teal;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.CurrentTemperature .current-degrees {
+  margin-left: 10px;
+}
+
+.CurrentTemperature .fahrenheit,
+.CurrentTemperature .celsius {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .CurrentTemperature .f-c {
+    font-size: 20px;
+  }
+}

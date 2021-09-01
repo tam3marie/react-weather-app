@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import WeatherIcon from "./WeatherIcon";
 import { UnitContext } from "./UseContexts";
 
+import "./ForecastHour.css";
+
 export default function ForecastHour(props) {
   const { unit } = useContext(UnitContext);
   let fahrenheitTemp = Math.round(props.data.temp);
@@ -31,20 +33,20 @@ export default function ForecastHour(props) {
   if (unit === "fahrenheit") {
     return (
       <div className="ForecastHour">
-        <div className="Forecast-day">{upcomingHours()}</div>
+        <div className="forecast-hour">{upcomingHours()}</div>
         <WeatherIcon code={props.data.weather[0].icon} size={32} />
-        <div className="Forecast-teamperatures">
-          <span className="Forecast-temp-max">{fahrenheitTemp}°F</span>
+        <div>
+          <span className="forecast-hour-temp-max">{fahrenheitTemp}°F</span>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="ForecastDay">
-        <div className="Forecast-day">{upcomingHours()}</div>
+      <div className="ForecastHour">
+        <div className="forecast-hour">{upcomingHours()}</div>
         <WeatherIcon code={props.data.weather[0].icon} size={32} />
-        <div className="Forecast-teamperatures">
-          <span className="Forecast-temp-max">{celsiusTemp}°C</span>
+        <div>
+          <span className="forecast-hour-temp-max">{celsiusTemp}°C</span>
         </div>
       </div>
     );

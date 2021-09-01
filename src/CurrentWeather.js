@@ -6,24 +6,26 @@ import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import CurrentTemperature from "./CurrentTemperature";
 import Forecast from "./Forecast";
+import BackgroundImage from "./BackgroundImage";
 
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
   return (
     <div className="CurrentWeather">
+      <BackgroundImage code={props.data.icon} />
       <div className="row">
         <div className="col-8">
           <p className="info">
-            <span id="display-city">{props.data.city}</span> <br />
+            <span className="display-city">{props.data.city}</span> <br />
             <FormattedDate timestamp={props.data.timestamp} />
-            <span id="weather-description">{props.data.description} </span>
-            <small className="high-low-temps">
-              <CurrentHighLowTemps
-                highTemp={props.data.highTemp}
-                lowTemp={props.data.lowTemp}
-              />
-            </small>
+            <span className="weather-description">
+              {props.data.description}{" "}
+            </span>
+            <CurrentHighLowTemps
+              highTemp={props.data.highTemp}
+              lowTemp={props.data.lowTemp}
+            />
           </p>
 
           <p className="currentTemp">
@@ -33,10 +35,10 @@ export default function CurrentWeather(props) {
         </div>
         <div className="col-4">
           <p className="details">
-            Humidity: <span id="humidity">{props.data.humidity}</span>%
+            Humidity: <span>{props.data.humidity}</span>%
             <br />
-            Wind Speed: <span id="wind">{props.data.wind}</span>
-            <span id="wind-units"> mph</span>
+            Wind Speed: <span>{props.data.wind}</span>
+            <span> mph</span>
           </p>
         </div>
       </div>

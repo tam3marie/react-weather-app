@@ -1,0 +1,18 @@
+.ForecastDay .forecast-day {
+  color: rgb(61, 60, 60);
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 8px;
+}
+
+.ForecastDay .forecast-temp-max {
+  color: #663399;
+  font-weight: bold;
+}
+.ForecastDay .forecast-temp-min {
+  color: #663399;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-left: 5px;
+}

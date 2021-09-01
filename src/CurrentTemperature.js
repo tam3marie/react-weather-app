@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { UnitContext } from "./UseContexts";
 
+import "./CurrentTemperature.css";
+
 export default function CurrentTemperature(props) {
   const { unit, setUnit } = useContext(UnitContext);
   function showCelsius(event) {
@@ -17,7 +19,7 @@ export default function CurrentTemperature(props) {
   if (unit === "fahrenheit") {
     return (
       <span className="CurrentTemperature">
-        <span id="current-degrees">{props.fahrenheit}</span>°
+        <span className="current-degrees">{props.fahrenheit}</span>°
         <span className="f-c">
           <span className="fahrenheit active" id="fahrenheit-link">
             F
@@ -26,8 +28,7 @@ export default function CurrentTemperature(props) {
           <span className="celsius">
             <a
               href="/"
-              className="not-active"
-              id="celsius-link"
+              className="not-active celsius-link"
               onClick={showCelsius}
             >
               C
@@ -41,15 +42,11 @@ export default function CurrentTemperature(props) {
       <span className="CurrentTemperature">
         <span id="current-degrees">{celsiusConversion()}</span>°
         <span className="f-c">
-          <span className="celsius active" id="celsius-link">
-            C
-          </span>
-          |
+          <span className="celsius active celsius-link">C</span>|
           <span className="fahrenheit">
             <a
               href="/"
-              className="not-active"
-              id="fahrenheit-link"
+              className="not-active fahrenheit-link"
               onClick={showFahrenheit}
             >
               F

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./FormattedStandardTime.css";
+
 export default function FormattedStandardTime(props) {
   let hours = props.timestamp.getHours();
   let minutes = props.timestamp.getMinutes();
@@ -9,7 +11,7 @@ export default function FormattedStandardTime(props) {
   }
   if (hours > 12) {
     return (
-      <small id="current-time">
+      <small className="current-time">
         {" "}
         {hours - 12}:{minutes}PM
       </small>
@@ -17,7 +19,7 @@ export default function FormattedStandardTime(props) {
   }
   if (hours < 12 && hours !== 0) {
     return (
-      <small id="current-time">
+      <small className="current-time">
         {" "}
         {hours}:{minutes}AM
       </small>
@@ -25,7 +27,7 @@ export default function FormattedStandardTime(props) {
   }
   if (hours === 12) {
     return (
-      <small id="current-time">
+      <small className="current-time">
         {" "}
         {hours}:{minutes}PM
       </small>
@@ -33,7 +35,7 @@ export default function FormattedStandardTime(props) {
   }
   if (hours === 0) {
     return (
-      <small id="current-time">
+      <small className="current-time">
         {" "}
         {hours + 12}:{minutes}AM
       </small>

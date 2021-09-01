@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import ForecastDay from "./ForecastDay";
 import ForecastHour from "./ForecastHour";
 
+import "./ForecastToggle.css";
+
 export default function ForecastSwitch(props) {
   const [forecast, setForecast] = useState("daily");
   let dailyForecastData = props.dailyForecastData;
@@ -20,22 +22,21 @@ export default function ForecastSwitch(props) {
 
   if (forecast === "daily") {
     return (
-      <div className="ForecastSwitch">
+      <div className="ForecastToggle">
         <h2>
-          <span className="active-daily-hourly" id="five-day-forecast">
+          <span className="active-daily-hourly five-day-forecast">
             5 Day Forecast
           </span>
           <a
             href="/"
-            className="not-active-daily-hourly"
-            id="hourly-forecast"
+            className="not-active-daily-hourly hourly-forecast"
             onClick={showHourlyForecast}
           >
             Switch to Hourly
           </a>
         </h2>
         <br />
-        <div className="five-day-forcast" id="forecast"></div>
+        <div className="five-day-forcast forecast"></div>
         <div className="row">
           {dailyForecastData.map(function (dailyForecastData, index) {
             if (index > 0 && index < 6) {
@@ -53,22 +54,21 @@ export default function ForecastSwitch(props) {
     );
   } else {
     return (
-      <div className="ForecastSwitch">
+      <div className="ForecastToggle">
         <h2>
-          <span className="active-daily-hourly" id="hourly-forecast">
+          <span className="active-daily-hourly hourly-forecast">
             Hourly Forecast
           </span>
           <a
             href="/"
-            className="not-active-daily-hourly"
-            id="five-day-forecast"
+            className="not-active-daily-hourly five-day-forecast"
             onClick={showDailyForecast}
           >
             Switch to 5 Day Forecast
           </a>
         </h2>
         <br />
-        <div className="five-day-forcast" id="forecast"></div>
+        <div className="five-day-forcast forecast"></div>
         <div className="row">
           {hourlyForecastData.map(function (hourlyForecastData, index) {
             if (index > 0 && index < 6) {

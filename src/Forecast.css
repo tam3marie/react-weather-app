@@ -1,64 +1,6 @@
-h2 {
-  margin-top: -20px;
-}
-
-.active-daily-hourly {
-  color: teal;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-.not-active-daily-hourly {
-  color: rgb(87, 87, 87);
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 300;
-  padding-left: 5px;
-  text-decoration: none;
-}
-.five-day-forcast {
-  text-align: center;
-}
-.active-daily-hourly:hover {
-  color: teal;
-  cursor: default;
-  text-decoration: underline;
-}
-.not-active-daily-hourly:hover {
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-}
 .Forecast {
   margin: 15px;
 }
 .Forecast .col {
   text-align: center;
-}
-.Forecast-day {
-  color: rgb(61, 60, 60);
-  font-weight: bold;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  margin-bottom: 8px;
-}
-
-.Forecast-temp-max {
-  color: #663399;
-  font-weight: bold;
-}
-.Forecast-temp-min {
-  color: #663399;
-  font-weight: bold;
-  opacity: 0.6;
-  margin-left: 5px;
-}
-
-@media (max-width: 600px) {
-  .active-daily-hourly {
-    font-size: 20px;
-  }
-  .not-active-daily-hourly {
-    font-size: 16px;
-  }
 }

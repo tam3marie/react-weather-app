@@ -1,0 +1,12 @@
+.ForecastHour .forecast-hour {
+  color: rgb(61, 60, 60);
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 8px;
+}
+
+.ForecastHour .forecast.hour-temp-max {
+  color: #663399;
+  font-weight: bold;
+}
