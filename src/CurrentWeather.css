@@ -16,7 +16,6 @@
   color: #663399;
   font-size: 70px;
   font-weight: 700;
-  margin: 0 0 30px 5px;
   padding: 0;
   vertical-align: text-top;
 }
@@ -37,14 +36,11 @@
 }
 
 @media (max-width: 600px) {
-  .CurrentWeather .col-8 {
-    margin-bottom: 20px;
-  }
   .CurrentWeather .info {
     font-size: 20px;
   }
   .CurrentWeather .currentTemp {
-    font-size: 50px;
+    font-size: 55px;
   }
   .CurrentWeather .details {
     font-size: 12px;

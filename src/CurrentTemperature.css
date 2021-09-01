@@ -2,6 +2,7 @@
   color: black;
   font-size: 24px;
   font-weight: 400;
+  padding: 5px;
   vertical-align: text-top;
 }
 .CurrentTemperature .active {

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-//import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 import ForecastToggle from "./ForecastToggle";
 
@@ -19,7 +17,6 @@ export default function Forecast(props) {
     setDailyForecastData(response.data.daily);
     setHourlyForecastData(response.data.hourly);
     setLoaded(true);
-    console.log(response.data.hourly);
   }
 
   if (loaded) {

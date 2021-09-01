@@ -1,9 +1,9 @@
 .ForecastDay .forecast-day {
   color: rgb(61, 60, 60);
   font-weight: bold;
+  margin-bottom: 8px;
   text-decoration: underline;
   text-underline-offset: 3px;
-  margin-bottom: 8px;
 }
 
 .ForecastDay .forecast-temp-max {
@@ -13,6 +13,6 @@
 .ForecastDay .forecast-temp-min {
   color: #663399;
   font-weight: bold;
-  opacity: 0.6;
   margin-left: 5px;
+  opacity: 0.6;
 }

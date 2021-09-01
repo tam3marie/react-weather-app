@@ -1,13 +1,13 @@
-h2 {
+.ForecastToggle h2 {
   margin-top: -20px;
 }
-.active-daily-hourly {
+.ForecastToggle .active-daily-hourly {
   color: teal;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.not-active-daily-hourly {
+.ForecastToggle .not-active-daily-hourly {
   color: rgb(87, 87, 87);
   font-size: 18px;
   font-style: italic;
@@ -15,24 +15,24 @@ h2 {
   padding-left: 5px;
   text-decoration: none;
 }
-.five-day-forcast {
+.ForecastToggle .five-day-forcast {
   text-align: center;
 }
-.active-daily-hourly:hover {
+.ForecastToggle .active-daily-hourly:hover {
   color: teal;
   cursor: default;
   text-decoration: underline;
 }
-.not-active-daily-hourly:hover {
+.ForecastToggle .not-active-daily-hourly:hover {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
 }
 @media (max-width: 600px) {
-  .active-daily-hourly {
+  .ForecastToggle .active-daily-hourly {
     font-size: 20px;
   }
-  .not-active-daily-hourly {
+  .ForecastToggle .not-active-daily-hourly {
     font-size: 16px;
   }
 }

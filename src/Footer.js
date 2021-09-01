@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./Footer.css";
 
@@ -24,7 +23,7 @@ export default function Footer() {
         </a>
         <br />
         <a
-          href="react-weather-app-tknight.netlify.app"
+          href="https://react-weather-app-tknight.netlify.app"
           target="_blank"
           rel="noreferrer"
         >
